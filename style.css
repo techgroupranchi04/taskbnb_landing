@@ -1,0 +1,1539 @@
+/* Custom Animations & Playful Effects */
+
+/* Floating animation for notification badges */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+.animation-delay-1000 {
+    animation-delay: 1s;
+}
+
+/* Font Family */
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Remove outline on navigation links */
+nav a:focus,
+nav a:active,
+nav button:focus,
+nav button:active {
+    outline: none;
+}
+
+/* Dark Mode Styles */
+:root {
+    --bg-light: #fcfcfc;
+    --bg-dark: #1a1a1a;
+    --text-light: #282828;
+    --text-dark: #f0f0f0;
+    --card-light: #ffffff;
+    --card-dark: #242424;
+    --border-light: #e5e5e5;
+    --border-dark: #333333;
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode nav {
+    background-color: rgba(26, 26, 26, 0.9);
+}
+
+body.dark-mode #mobile-drawer {
+    background-color: var(--bg-dark);
+}
+
+body.dark-mode .text-dark {
+    color: var(--text-dark);
+}
+
+body.dark-mode .bg-white,
+body.dark-mode .bg-light {
+    background-color: var(--card-dark);
+}
+
+body.dark-mode .shadow-sm,
+body.dark-mode .shadow-lg,
+body.dark-mode .shadow-xl {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .border-gray-200 {
+    border-color: var(--border-dark);
+}
+
+body.dark-mode .hover\:bg-gray-100:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode section {
+    background-color: transparent;
+}
+
+body.dark-mode .card-hover,
+body.dark-mode .feature-item {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+}
+
+/* Dark Mode Toggle Button */
+#theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+}
+
+#theme-toggle:hover {
+    background: linear-gradient(135deg, rgba(107, 157, 95, 0.1), rgba(61, 136, 179, 0.1));
+    border-color: rgba(107, 157, 95, 0.3);
+}
+
+#theme-toggle .material-symbols-outlined {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background: linear-gradient(135deg, rgba(107, 157, 95, 0.2), rgba(61, 136, 179, 0.2));
+}
+
+/* Icon transitions */
+#theme-icon-light,
+#theme-icon-dark {
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body:not(.dark-mode) #theme-icon-light {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+body:not(.dark-mode) #theme-icon-dark {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+}
+
+body.dark-mode #theme-icon-light {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+}
+
+body.dark-mode #theme-icon-dark {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Enrollment Form Dark Mode */
+body.dark-mode #enrollment {
+    background-color: var(--bg-dark);
+}
+
+body.dark-mode #enrollment .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.1), rgba(61, 136, 179, 0.1));
+    border-color: rgba(107, 157, 95, 0.3);
+}
+
+/* Value Proposition Dark Mode Styles */
+body.dark-mode .bg-gradient-to-br.from-gray-50 {
+    background: var(--bg-dark) !important;
+}
+
+/* Section Header Badge */
+body.dark-mode .bg-gradient-to-r.from-primary\/20 {
+    background: linear-gradient(to right, rgba(107, 157, 95, 0.3), rgba(61, 136, 179, 0.3), rgba(107, 157, 95, 0.3)) !important;
+    border-color: rgba(107, 157, 95, 0.4) !important;
+}
+
+body.dark-mode .text-primary {
+    color: #8bc77e !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #5da8d4 !important;
+}
+
+/* Bento Grid Cards */
+body.dark-mode .bg-gradient-to-br.from-primary\/5 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(107, 157, 95, 0.2)) !important;
+    border-color: rgba(107, 157, 95, 0.3) !important;
+}
+
+body.dark-mode .bg-gradient-to-br.from-secondary\/5 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(61, 136, 179, 0.2)) !important;
+    border-color: rgba(61, 136, 179, 0.3) !important;
+}
+
+body.dark-mode .bg-gradient-to-br.from-purple-50 {
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15)) !important;
+    border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+body.dark-mode .bg-gradient-to-br.from-green-50 {
+    background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15)) !important;
+    border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+body.dark-mode .bg-gradient-to-br.from-orange-50 {
+    background: linear-gradient(to bottom right, rgba(249, 115, 22, 0.15), rgba(245, 158, 11, 0.15)) !important;
+    border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+/* Card Inner Elements */
+body.dark-mode .bg-white.px-4,
+body.dark-mode .bg-white.rounded-2xl,
+body.dark-mode .bg-white.rounded-full {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode .text-gray-700 {
+    color: #d1d5db !important;
+}
+
+body.dark-mode .text-gray-600 {
+    color: #9ca3af !important;
+}
+
+body.dark-mode .text-dark {
+    color: var(--text-dark) !important;
+}
+
+/* Stats Banner Dark Mode */
+body.dark-mode .bg-gradient-to-r.from-primary.via-secondary {
+    background: linear-gradient(to right, rgba(107, 157, 95, 0.3), rgba(61, 136, 179, 0.3), rgba(107, 157, 95, 0.3)) !important;
+}
+
+body.dark-mode .text-white {
+    color: #ffffff !important;
+}
+
+body.dark-mode .text-white\/90 {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-mode .text-white\/70 {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark-mode #enrollment input,
+body.dark-mode #enrollment textarea,
+body.dark-mode #enrollment select {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-dark);
+}
+
+body.dark-mode #enrollment input:focus,
+body.dark-mode #enrollment textarea:focus,
+body.dark-mode #enrollment select:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #6b9d5f;
+}
+
+body.dark-mode #enrollment label {
+    color: var(--text-dark);
+}
+
+body.dark-mode #enrollment .text-gray-600,
+body.dark-mode #enrollment .text-gray-700 {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode #enrollment .text-gray-500 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Form Input Enhancements */
+#enrollment input:focus,
+#enrollment textarea:focus,
+#enrollment select:focus {
+    box-shadow: 0 0 0 3px rgba(107, 157, 95, 0.1);
+}
+
+#enrollment input::placeholder,
+#enrollment textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode #enrollment input::placeholder,
+body.dark-mode #enrollment textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* How It Works Section Dark Mode */
+body.dark-mode #how-it-works {
+    background: linear-gradient(to bottom right, rgba(30, 30, 30, 1), rgba(20, 20, 20, 1), rgba(30, 30, 30, 1)) !important;
+}
+
+body.dark-mode #how-it-works .bg-gradient-to-br.from-primary\/10 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(107, 157, 95, 0.08)) !important;
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #how-it-works .bg-gradient-to-br.from-secondary\/10 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(61, 136, 179, 0.08)) !important;
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #how-it-works .bg-gradient-to-br.from-purple-50 {
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15)) !important;
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+body.dark-mode #how-it-works .bg-white {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode #how-it-works .text-gray-600 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.dark-mode #how-it-works .text-gray-700 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.dark-mode #how-it-works .text-dark {
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode #how-it-works .bg-gradient-to-r.from-primary.via-secondary {
+    background: linear-gradient(to right, rgba(107, 157, 95, 0.35), rgba(61, 136, 179, 0.35), rgba(107, 157, 95, 0.35)) !important;
+    border: 2px solid rgba(107, 157, 95, 0.45);
+}
+
+body.dark-mode #how-it-works .bg-gradient-to-br.from-primary {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.25), rgba(107, 157, 95, 0.15)) !important;
+}
+
+body.dark-mode #how-it-works .bg-gradient-to-br.from-secondary {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.25), rgba(61, 136, 179, 0.15)) !important;
+}
+
+body.dark-mode #how-it-works .bg-primary\/10 {
+    background-color: rgba(107, 157, 95, 0.12) !important;
+}
+
+body.dark-mode #how-it-works .bg-secondary\/10 {
+    background-color: rgba(61, 136, 179, 0.12) !important;
+}
+
+body.dark-mode #how-it-works .bg-purple-100 {
+    background-color: rgba(168, 85, 247, 0.12) !important;
+}
+
+body.dark-mode #how-it-works .bg-pink-100 {
+    background-color: rgba(236, 72, 153, 0.12) !important;
+}
+
+body.dark-mode #how-it-works .border-primary\/20 {
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #how-it-works .border-secondary\/20 {
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #how-it-works .border-purple-200 {
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+/* Contact Section Dark Mode */
+body.dark-mode #contact {
+    background: linear-gradient(to bottom right, rgba(30, 30, 30, 1), rgba(20, 20, 20, 1), rgba(30, 30, 30, 1)) !important;
+}
+
+body.dark-mode #contact .bg-gradient-to-br.from-primary\/10 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(107, 157, 95, 0.08)) !important;
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #contact .bg-gradient-to-br.from-secondary\/10 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(61, 136, 179, 0.08)) !important;
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #contact .bg-gradient-to-br.from-green-50 {
+    background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15)) !important;
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+body.dark-mode #contact .border-green-200 {
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+body.dark-mode #contact .bg-white {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode #contact input,
+body.dark-mode #contact textarea {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode #contact input:focus,
+body.dark-mode #contact textarea:focus {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-color: #8bc77e !important;
+}
+
+body.dark-mode #contact label {
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode #contact .text-gray-600 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.dark-mode #contact .text-gray-700 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.dark-mode #contact .text-gray-800 {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-mode #contact .text-dark {
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode #contact .bg-gray-50 {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode #contact .bg-gray-50:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode #contact .bg-gradient-to-r.from-purple-100 {
+    background: linear-gradient(to right, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15), rgba(168, 85, 247, 0.15)) !important;
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+body.dark-mode #contact .border-purple-200 {
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+/* Features Section Dark Mode */
+body.dark-mode #features {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.08), rgba(30, 30, 30, 1), rgba(107, 157, 95, 0.08)) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-primary\/10 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(107, 157, 95, 0.08)) !important;
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-secondary\/10 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(61, 136, 179, 0.08)) !important;
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-purple-50 {
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15)) !important;
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-green-50 {
+    background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15)) !important;
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-orange-50 {
+    background: linear-gradient(to bottom right, rgba(249, 115, 22, 0.15), rgba(245, 158, 11, 0.15)) !important;
+    border-color: rgba(249, 115, 22, 0.35) !important;
+}
+
+body.dark-mode #features .bg-white {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode #features .text-gray-600 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.dark-mode #features .text-gray-700 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.dark-mode #features .text-dark {
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode #features .border-primary\/20 {
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #features .border-secondary\/20 {
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #features .border-purple-200 {
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+body.dark-mode #features .border-green-200 {
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+body.dark-mode #features .border-orange-200 {
+    border-color: rgba(249, 115, 22, 0.35) !important;
+}
+
+/* Features Section Task Card Dark Mode */
+body.dark-mode #features .bg-white.rounded-3xl {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-primary\/5.to-blue-50 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(59, 130, 246, 0.15)) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-secondary\/5.to-indigo-50 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(99, 102, 241, 0.15)) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-green-50.to-primary\/5 {
+    background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.15), rgba(107, 157, 95, 0.15)) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-br.from-yellow-50.to-orange-50 {
+    background: linear-gradient(to bottom right, rgba(234, 179, 8, 0.15), rgba(249, 115, 22, 0.15)) !important;
+}
+
+body.dark-mode #features .border-l-4.border-primary {
+    border-left-color: rgba(107, 157, 95, 0.6) !important;
+}
+
+body.dark-mode #features .border-l-4.border-secondary {
+    border-left-color: rgba(61, 136, 179, 0.6) !important;
+}
+
+body.dark-mode #features .border-l-4.border-green-500 {
+    border-left-color: rgba(34, 197, 94, 0.6) !important;
+}
+
+body.dark-mode #features .border-l-4.border-yellow-500 {
+    border-left-color: rgba(234, 179, 8, 0.6) !important;
+}
+
+/* Smartphone Mockup Dark Mode */
+body.dark-mode #features .bg-gradient-to-br.from-gray-900 {
+    background: linear-gradient(to bottom right, rgba(17, 24, 39, 1), rgba(31, 41, 55, 1));
+}
+
+body.dark-mode #features .bg-gray-900 {
+    background-color: rgba(17, 24, 39, 0.95);
+}
+
+body.dark-mode #features .bg-white.rounded-\[2\.5rem\] {
+    background-color: rgba(30, 30, 35, 0.95);
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.3), 0 20px 60px rgba(0,0,0,0.5) !important;
+}
+
+body.dark-mode #features .bg-gradient-to-b.from-gray-50 {
+    background: linear-gradient(to bottom, rgba(40, 40, 45, 0.9), rgba(30, 30, 35, 0.95));
+}
+
+body.dark-mode #features .text-gray-600 {
+    color: rgba(156, 163, 175, 0.9);
+}
+
+body.dark-mode #features .bg-gradient-to-b.from-white.to-gray-50 {
+    background: linear-gradient(to bottom, rgba(30, 30, 35, 0.95), rgba(40, 40, 45, 0.9));
+}
+
+body.dark-mode #features .bg-gray-800 {
+    background-color: rgba(156, 163, 175, 0.5);
+}
+
+/* Navigation Glassmorphism Enhancement */
+body.dark-mode nav {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    backdrop-filter: blur(20px);
+}
+
+body:not(.dark-mode) nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+}
+
+/* Hero Section Dark Mode Enhancement */
+body.dark-mode #hero {
+    background: linear-gradient(to bottom right, rgba(20, 20, 20, 1), rgba(30, 40, 35, 1), rgba(25, 35, 40, 1)) !important;
+}
+
+body.dark-mode #hero .text-gray-600 {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-mode #hero .text-dark {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+body.dark-mode #hero h1 {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+body.dark-mode #hero strong {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+body.dark-mode #hero .bg-white\/90,
+body.dark-mode #hero .bg-white\/80,
+body.dark-mode #hero .bg-white\/50 {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(16px);
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-mode #hero .border-gray-200 {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+body.dark-mode #hero .border-white\/60 {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-mode #hero .border-white\/30 {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode #hero .shadow-lg,
+body.dark-mode #hero .shadow-xl,
+body.dark-mode #hero .shadow-2xl {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode #hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #fff !important;
+}
+
+body.dark-mode #hero-btn-secondary:hover {
+    background: rgba(107, 157, 95, 0.25) !important;
+    border-color: rgba(107, 157, 95, 0.6) !important;
+}
+
+/* Hero Badge Dark Mode */
+body.dark-mode #hero .bg-gradient-to-r.from-primary\/10 {
+    background: rgba(107, 157, 95, 0.2) !important;
+    border-color: rgba(107, 157, 95, 0.4) !important;
+}
+
+body.dark-mode #hero .text-primary {
+    color: rgba(107, 157, 95, 1) !important;
+    filter: brightness(1.3);
+}
+
+body.dark-mode #hero .text-secondary {
+    color: rgba(61, 136, 179, 1) !important;
+    filter: brightness(1.3);
+}
+
+body.dark-mode #hero .text-primary {
+    color: rgba(107, 157, 95, 1) !important;
+    filter: brightness(1.3);
+}
+
+/* Fix Badge Gradient Text - "On-Demand Task Execution" */
+body.dark-mode #hero .bg-gradient-to-r.from-primary.to-secondary.bg-clip-text.text-transparent {
+    background: linear-gradient(to right, rgb(156, 220, 100), rgb(120, 200, 255)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Fix Hero Title Gradient Text - "Pay for Results." */
+body.dark-mode #hero .hero-gradient-text {
+    background: linear-gradient(to right, rgb(156, 220, 100), rgb(100, 200, 255), rgb(156, 220, 100)) !important;
+    background-size: 200% 100% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Fix Bottom Line under "Pay for Results." */
+body.dark-mode #hero .bg-gradient-to-r.from-primary.via-secondary.to-transparent {
+    background: linear-gradient(to right, rgb(156, 220, 100), rgb(100, 200, 255), transparent) !important;
+}
+
+/* Pricing Section Dark Mode Enhancement */
+body.dark-mode #pricing .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.08), rgba(61, 136, 179, 0.08)) !important;
+}
+
+/* Services Section Dark Mode Enhancement */
+body.dark-mode #services {
+    background: linear-gradient(to bottom right, rgba(30, 30, 30, 1), rgba(107, 157, 95, 0.05), rgba(30, 30, 30, 1)) !important;
+}
+
+body.dark-mode #services .bg-gradient-to-br.from-primary\/10 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(107, 157, 95, 0.08)) !important;
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #services .bg-gradient-to-br.from-secondary\/10 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(61, 136, 179, 0.08)) !important;
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #services .bg-gradient-to-br.from-purple-50 {
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15)) !important;
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+body.dark-mode #services .bg-gradient-to-br.from-green-50 {
+    background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15)) !important;
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+body.dark-mode #services .bg-gradient-to-br.from-orange-50 {
+    background: linear-gradient(to bottom right, rgba(249, 115, 22, 0.15), rgba(245, 158, 11, 0.15)) !important;
+    border-color: rgba(249, 115, 22, 0.35) !important;
+}
+
+body.dark-mode #services .bg-white {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Testimonials Section Dark Mode Enhancement */
+body.dark-mode #testimonials {
+    background: linear-gradient(to bottom right, rgba(30, 30, 30, 1), rgba(20, 20, 20, 1), rgba(30, 30, 30, 1)) !important;
+}
+
+body.dark-mode #testimonials .bg-gradient-to-br.from-primary\/10 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.15), rgba(107, 157, 95, 0.08)) !important;
+    border-color: rgba(107, 157, 95, 0.35) !important;
+}
+
+body.dark-mode #testimonials .bg-gradient-to-br.from-secondary\/10 {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.15), rgba(61, 136, 179, 0.08)) !important;
+    border-color: rgba(61, 136, 179, 0.35) !important;
+}
+
+body.dark-mode #testimonials .bg-gradient-to-br.from-purple-50 {
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15)) !important;
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+body.dark-mode #testimonials .bg-gradient-to-br.from-green-50 {
+    background: linear-gradient(to bottom right, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15)) !important;
+    border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+/* CTA Section Dark Mode Enhancement */
+body.dark-mode section.bg-gradient-to-br.from-primary.via-secondary {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.35), rgba(61, 136, 179, 0.35), rgba(107, 157, 95, 0.35)) !important;
+}
+
+/* Value Proposition Dark Mode Enhancement */
+body.dark-mode section.py-20.bg-gradient-to-br.from-gray-50 {
+    background: linear-gradient(to bottom right, rgba(30, 30, 30, 1), rgba(20, 20, 20, 1), rgba(30, 30, 30, 1)) !important;
+}
+
+/* Contact Form Input Enhancements */
+#contact input:focus,
+#contact textarea:focus {
+    box-shadow: 0 0 0 3px rgba(107, 157, 95, 0.1);
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode #contact input::placeholder,
+body.dark-mode #contact textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Fade In Up Animation */
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Hero Section Improvements */
+.min-h-screen {
+    min-height: calc(100vh - 64px);
+}
+
+/* Hero Image Styling */
+#hero-image {
+    max-height: 600px;
+    object-fit: contain;
+}
+
+#hero-right {
+    margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    #hero-image {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero-image {
+        max-height: 400px;
+    }
+}
+
+/* Gradient Text Enhancement */
+.gradient-text {
+    background: linear-gradient(135deg, #6b9d5f, #3d88b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.hero-gradient-text {
+    font-weight: 900;
+}
+
+/* Animated Gradient Flow */
+@keyframes gradient-flow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient-flow {
+    animation: gradient-flow 3s ease-in-out infinite;
+}
+
+/* 3D Float Animation */
+@keyframes float3D {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotateY(0deg) rotateX(0deg);
+    }
+    25% {
+        transform: translateY(-15px) translateX(5px) rotateY(3deg) rotateX(2deg);
+    }
+    50% {
+        transform: translateY(-25px) translateX(0) rotateY(0deg) rotateX(0deg);
+    }
+    75% {
+        transform: translateY(-15px) translateX(-5px) rotateY(-3deg) rotateX(-2deg);
+    }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Slow Spin Animation */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Additional Dark Mode Hero Support */
+body.dark-mode .text-gray-600 {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Hero Stats Cards Dark Mode */
+body.dark-mode #hero .text-3xl {
+    filter: brightness(1.3);
+}
+
+body.dark-mode #hero .text-sm.text-gray-600 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Notification Cards Dark Mode Text */
+body.dark-mode #hero .text-gray-500 {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark-mode #hero .text-sm.font-bold.text-dark {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Hero Background Blobs Dark Mode */
+body.dark-mode #hero .bg-primary\/20 {
+    background-color: rgba(107, 157, 95, 0.15) !important;
+}
+
+body.dark-mode #hero .bg-secondary\/20 {
+    background-color: rgba(61, 136, 179, 0.15) !important;
+}
+
+body.dark-mode #hero .bg-primary\/20 {
+    background-color: rgba(107, 157, 95, 0.15) !important;
+}
+
+/* Value Proposition Section Dark Mode */
+body.dark-mode section.bg-gradient-to-br.from-primary\/5 {
+    background: linear-gradient(to bottom right, rgba(107, 157, 95, 0.08), transparent, rgba(61, 136, 179, 0.08));
+}
+
+body.dark-mode section .bg-gradient-to-r.from-primary\/20 {
+    background: linear-gradient(to right, rgba(107, 157, 95, 0.15), rgba(61, 136, 179, 0.15));
+}
+
+body.dark-mode .text-primary {
+    color: #8bc77e !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #5da8d4 !important;
+}
+
+body.dark-mode .border-gray-100 {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .bg-gradient-to-r.from-primary {
+    background: linear-gradient(to right, rgba(107, 157, 95, 0.8), rgba(107, 157, 95, 0.6));
+}
+
+body.dark-mode .bg-gradient-to-r.from-secondary {
+    background: linear-gradient(to right, rgba(61, 136, 179, 0.8), rgba(61, 136, 179, 0.6));
+}
+
+body.dark-mode .group:hover .group-hover\:text-primary {
+    color: #8bc77e !important;
+}
+
+body.dark-mode .group:hover .group-hover\:text-secondary {
+    color: #5da8d4 !important;
+}
+
+body.dark-mode .bg-gradient-to-r.from-primary\/70,
+body.dark-mode .bg-gradient-to-r.from-secondary\/70 {
+    filter: brightness(1.2);
+}
+
+/* Stats Section Gradient Text Fix for Dark Mode */
+body.dark-mode .bg-gradient-to-r.from-primary.to-primary\/70.bg-clip-text,
+body.dark-mode .bg-gradient-to-r.from-secondary.to-secondary\/70.bg-clip-text {
+    background: linear-gradient(to right, #a8d69b, #c5e8b7) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: #a8d69b !important;
+}
+
+body.dark-mode .bg-gradient-to-r.from-secondary.to-secondary\/70.bg-clip-text {
+    background: linear-gradient(to right, #7bb9dd, #a3d1ed) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: #7bb9dd !important;
+}
+
+/* Alternative approach for stats - solid color fallback */
+body.dark-mode .mt-16.bg-white .text-4xl.md\:text-5xl,
+body.dark-mode .mt-16.bg-white .text-4xl {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Services Section Dark Mode */
+body.dark-mode #services {
+    background: var(--color-dark-gray);
+}
+
+body.dark-mode #services .bg-white {
+    background: var(--color-card-bg);
+    border-color: var(--color-primary);
+}
+
+body.dark-mode #services h2,
+body.dark-mode #services h3 {
+    color: var(--color-text-dark);
+}
+
+body.dark-mode #services p,
+body.dark-mode #services li {
+    color: var(--color-text-light);
+}
+
+body.dark-mode #services .bg-gradient-to-br {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Testimonials Section Dark Mode */
+body.dark-mode #testimonials {
+    background: linear-gradient(to bottom right, rgba(61, 136, 179, 0.08), rgba(107, 157, 95, 0.08));
+}
+
+body.dark-mode #testimonials .bg-white {
+    background-color: var(--card-dark);
+}
+
+body.dark-mode #testimonials .text-gray-700 {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+body.dark-mode #testimonials .text-gray-600 {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark-mode #testimonials .text-gray-500 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode #testimonials .border-gray-100 {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #testimonials .text-dark {
+    color: var(--text-dark);
+}
+
+/* Testimonial Card Enhancements */
+#testimonials .card-hover {
+    transform-origin: center;
+}
+
+#testimonials .card-hover:hover {
+    transform: translateY(-8px) rotate(-0.5deg);
+}
+
+#testimonials .card-hover:nth-child(even):hover {
+    transform: translateY(-8px) rotate(0.5deg);
+}
+
+/* Pricing Section Enhancements */
+#pricing .opacity-75 {
+    position: relative;
+}
+
+#pricing .opacity-75::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.03) 10px,
+        rgba(255, 255, 255, 0.03) 20px
+    );
+    border-radius: 1rem;
+    pointer-events: none;
+}
+
+#pricing button:disabled {
+    cursor: not-allowed;
+    position: relative;
+}
+
+#pricing button:disabled:hover {
+    transform: none;
+}
+
+/* Dark Mode Pricing Support */
+body.dark-mode #pricing .bg-white {
+    background-color: var(--card-dark);
+}
+
+body.dark-mode #pricing .text-gray-600,
+body.dark-mode #pricing .text-gray-700 {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode #pricing .text-gray-500 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode #pricing .text-gray-400 {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+body.dark-mode #pricing .border-gray-300 {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode #pricing .border-gray-200 {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode #pricing .bg-gray-300 {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #pricing .bg-gray-400 {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode #pricing button:disabled {
+    opacity: 0.6;
+}
+
+/* Material Icons Styling */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    75% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float-animation {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.float-animation {
+    animation: float-animation 3s ease-in-out infinite;
+}
+
+@keyframes rotate-on-hover-animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-on-hover {
+    transition: transform 0.3s ease;
+}
+
+.rotate-on-hover:hover {
+    animation: rotate-on-hover-animation 1s ease-in-out;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional Playful Animations */
+
+/* Mobile Drawer Animations */
+#mobile-drawer {
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+}
+
+#mobile-drawer nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+#mobile-drawer nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #6b9d5f, #3d88b3);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+#mobile-drawer nav a:hover::before {
+    transform: translateX(0);
+}
+
+/* Hamburger Animation */
+#mobile-menu-button span {
+    transform-origin: center;
+}
+
+
+/* Magic Particles */
+.magic-particle {
+    will-change: transform, opacity;
+}
+
+/* Hide particles on mobile */
+@media (max-width: 768px) {
+    .magic-particle {
+        display: none;
+    }
+}
+
+@keyframes blob {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+.blob-animation {
+    animation: blob 5s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-on-hover:hover {
+    animation: shake 0.5s ease;
+}
+
+/* Custom Font */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Playful Hover Effects */
+.bounce-on-hover:hover {
+    animation: bounce 0.5s ease;
+}
+
+.wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+}
+
+.feature-item {
+    animation: fadeInUp 0.6s ease;
+}
+
+.feature-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.feature-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.feature-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.feature-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Dashboard Mockup Animation */
+.dashboard-mockup {
+    animation: fadeInUp 1s ease;
+}
+
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+    background: linear-gradient(135deg, #6b9d5f, #3d88b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Loading Animation for Dashboard */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Fun Emoji Animations */
+section:hover .pulse {
+    animation-duration: 1s;
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus States for Accessibility */
+a:focus, button:focus {
+    outline: 3px solid #6b9d5f;
+    outline-offset: 2px;
+}
+
+/* Mobile Menu Animation */
+@media (max-width: 768px) {
+    nav {
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Section Reveal Animation */
+section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.3s; }
+section:nth-of-type(4) { animation-delay: 0.4s; }
+section:nth-of-type(5) { animation-delay: 0.5s; }
+section:nth-of-type(6) { animation-delay: 0.6s; }
+
+/* Playful Shadows */
+.playful-shadow {
+    box-shadow: 
+        0 4px 6px -1px rgba(107, 157, 95, 0.1),
+        0 2px 4px -1px rgba(61, 136, 179, 0.1);
+}
+
+.playful-shadow:hover {
+    box-shadow: 
+        0 20px 25px -5px rgba(107, 157, 95, 0.2),
+        0 10px 10px -5px rgba(61, 136, 179, 0.2);
+}
+
+/* Fun Cursor Effects */
+a, button {
+    cursor: pointer;
+}
+
+/* Price Card Special Effect */
+#pricing .card-hover:hover {
+    transform: translateY(-12px) rotate(-1deg);
+}
+
+/* Smooth Image Loading */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Highlight Effect */
+.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: rgba(107, 157, 95, 0.3);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.highlight:hover::after {
+    height: 100%;
+}
